@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grapmart01/pages/account/register.dart';
 import 'package:grapmart01/pages/home_pages/home_page.dart';
 import 'package:grapmart01/widget/reusabledrawer.dart';
 
@@ -16,7 +17,7 @@ class _HomeState extends State<Home> {
   int currentTab = 0;
   final List<Widget> screens = [
     // const Cart(),
-    // const Account(),
+     const Account(),
     // const Printer(),
     const HomePage(),
   ];
@@ -91,7 +92,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        // currentScreen = const Account();
+                        currentScreen = const Account();
                         currentTab = 2;
                       });
                     },
