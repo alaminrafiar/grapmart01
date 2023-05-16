@@ -23,7 +23,7 @@ class _VerificarionState extends State<Verificarion> {
                 height: 20,
               ),
               const Text(
-                'We have sent a code to your phone 017******44',
+                'We have sent a code to your phone 01XX-XXXX-XXX',
                 style: TextStyle(fontSize: 12, color: Colors.black54),
               ),
               const SizedBox(

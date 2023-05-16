@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:grapmart01/Auth_Model/auth.dart';
+import 'package:grapmart01/api_integration/reset_api/api.dart';
 import 'package:grapmart01/pages/account/Verification.dart';
 import 'package:grapmart01/pages/account/register.dart';
 
@@ -16,6 +18,7 @@ class Reset extends StatefulWidget {
 
 class _ResetState extends State<Reset> {
   TextEditingController _phone = TextEditingController();
+  ResetAuth? resetAuth;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +87,7 @@ class _ResetState extends State<Reset> {
                       ),
                       hintText: "01XX-XXXX-XXX",
                     ),
-                    // controller: ,
+                    controller: _phone,
                   ),
                 ),
               ],
@@ -95,18 +98,21 @@ class _ResetState extends State<Reset> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
+                  resetAuth = await MyresetService.methodr(_phone.text);
+                  setState(() {});
                   Navigator.pushReplacement(context,
                       CupertinoPageRoute(builder: (context) => Verificarion()));
                 },
-                child:Container(
+                child: Container(
                   height: MediaQuery.of(context).size.height / 14,
                   decoration: BoxDecoration(
                     color: Colors.orange,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Center(
-                    child: Text("Reset",
+                    child: Text(
+                      "Reset",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -117,6 +123,11 @@ class _ResetState extends State<Reset> {
                 // child: ReusableContainer(text: 'Reset'),
               ),
             ),
+
+            //ata amniy deoya ase
+            resetAuth == null
+                ? CircularProgressIndicator()
+                : Text("message is : ${resetAuth!.message}"),
             const SizedBox(
               height: 10,
             ),
