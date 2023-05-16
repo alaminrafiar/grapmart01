@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:grapmart01/Auth_Model/Login_model.dart';
 import 'package:grapmart01/api_integration/login_api/login_api.dart';
 import 'package:grapmart01/pages/account/Dashboard/Dashboard.dart';
+import 'package:grapmart01/pages/account/Reset.dart';
 import 'package:grapmart01/pages/account/Sign_Up.dart';
 import 'package:grapmart01/widget/account/ReusableButton.dart';
 import 'package:grapmart01/widget/account/custom_column.dart';
@@ -189,10 +190,10 @@ class _SignUpScreenState extends State<Account> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: ((context) => const Reset())),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: ((context) => const Reset())),
+                    );
                   },
                   child: const Text(
                     'Reset Now',

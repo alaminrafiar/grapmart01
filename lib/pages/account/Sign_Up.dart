@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grapmart01/Auth_Model/singin_model.dart';
 import 'package:grapmart01/api_integration/Singin_api/SinIn_api.dart';
 import 'package:grapmart01/pages/account/Verification.dart';
+import 'package:grapmart01/pages/account/register.dart';
 import 'package:grapmart01/widget/account/ReusableButton.dart';
 import 'package:grapmart01/widget/account/custom_column.dart';
 import 'package:grapmart01/widget/account/reusable_textfield.dart';
@@ -206,11 +207,11 @@ class _SignUpState extends State<SignUp> {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: ((context) => const Account())),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => const Account())),
+                      );
                     },
                     child: const Text(
                       'Sign in',
